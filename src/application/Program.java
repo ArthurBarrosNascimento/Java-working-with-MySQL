@@ -1,14 +1,10 @@
 package application;
 
-import db.DB;
-import db.DbException;
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 
-import java.sql.*;
-import java.util.Date;
 import java.util.List;
 
 public class Program {
@@ -22,6 +18,12 @@ public class Program {
         System.out.println("\n=== TEST 2: seller findByDepartment ===");
         Department department = new Department(2, null);
         List<Seller> list = sellerDao.findByDepartment(department);
+        for (Seller obj: list) {
+            System.out.println(obj);
+        }
+
+        System.out.println("\n=== TEST 3: seller findAll ===");
+        list = sellerDao.findAll();
         for (Seller obj: list) {
             System.out.println(obj);
         }
