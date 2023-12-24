@@ -1,5 +1,6 @@
 package application;
 
+import db.DB;
 import db.DbException;
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
@@ -53,6 +54,8 @@ public class Program {
 
         } catch (DbException e) {
             System.out.println(e.getMessage());
+        } finally {
+            DB.closeConnection();
         }
 
     }
