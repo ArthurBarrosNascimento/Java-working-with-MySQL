@@ -58,5 +58,6 @@ public class Program {
             DB.closeConnection();
         }
 
+        sc.close();
     }
 }
